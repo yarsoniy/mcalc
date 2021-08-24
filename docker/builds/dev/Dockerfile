@@ -1,7 +1,11 @@
 ###### PHP
 FROM php:8.0.9-fpm AS fpm
 ENV REFRESHED_AT 2019-12-05
-RUN apt-get update
+
+RUN apt-get update && \
+    apt-get install -y git
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 VOLUME /code
 WORKDIR /code
 
