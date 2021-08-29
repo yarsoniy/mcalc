@@ -11,6 +11,6 @@ class TestController
     #[Route(path: '/api/test', methods: ['GET'])]
     public function test(Request $request): Response
     {
-        return new Response("Hello world");
+        return new Response('Hello world');
     }
 }

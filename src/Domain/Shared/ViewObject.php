@@ -2,6 +2,6 @@
 
 namespace App\Domain\Shared;
 
-interface ValueObject
+interface ViewObject
 {
 }
