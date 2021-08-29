@@ -3,7 +3,13 @@ FROM php:8.0.9-fpm AS fpm
 ENV REFRESHED_AT 2019-12-05
 
 RUN apt-get update && \
-    apt-get install -y git
+    apt-get install -y \
+    git \
+    zip \
+    unzip \
+    libzip-dev
+
+RUN docker-php-ext-install zip
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 VOLUME /code
